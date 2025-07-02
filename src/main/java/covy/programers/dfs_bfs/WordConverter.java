@@ -23,18 +23,19 @@ public class WordConverter {
         continue;
       }
 
-      int k = 0;    // 같은 스펠링 몇개인지 세기
-      for (int j = 0; j < begin.length(); j++) {
+      int k = 0;
+      for (int j=0; j<begin.length(); j++) {
         if (begin.charAt(j) == words[i].charAt(j)) {
           k++;
         }
       }
 
-      if (k == begin.length() - 1) {  // 한글자 빼고 모두 같은 경우
+      if (k == begin.length() - 1) {
         visited[i] = true;
         dfs(words[i], target, words, cnt + 1);
         visited[i] = false;
       }
     }
   }
+
 }
