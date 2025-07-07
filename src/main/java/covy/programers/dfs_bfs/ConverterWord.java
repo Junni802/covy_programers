@@ -3,7 +3,7 @@ package covy.programers.dfs_bfs;
 public class ConverterWord {
 
   static boolean[] visited;
-  static int answer = 0;
+  static int answer = 1;
 
   public int solution(String begin, String target, String[] words) {
     visited = new boolean[words.length];
