@@ -30,6 +30,7 @@ public class ConverterWord {
         }
       }
 
+
       if (k == begin.length() - 1) {
         visited[i] = true;
         dfs(words[i], target, words, cnt + 1);
