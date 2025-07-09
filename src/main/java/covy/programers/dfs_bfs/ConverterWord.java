@@ -5,6 +5,14 @@ public class ConverterWord {
   static boolean[] visited;
   static int answer = 1;
 
+  /**
+   * 단어변환 Programers
+   *
+   * @param begin
+   * @param target
+   * @param words
+   * @return
+   */
   public int solution(String begin, String target, String[] words) {
     visited = new boolean[words.length];
 
