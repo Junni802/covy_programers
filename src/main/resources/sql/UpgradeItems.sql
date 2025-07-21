@@ -7,5 +7,5 @@ FROM ITEM_INFO A
 WHERE B.PARENT_ITEM_ID IS NOT NULL
   AND B.PARENT_ITEM_ID IN (SELECT ITEM_ID
                            FROM ITEM_INFO
-                           WHERE RARITY = 'RARE')
+                           WHERE RARITY = 'RARE1')
 ORDER BY ITEM_ID DESC
