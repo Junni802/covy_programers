@@ -4,11 +4,10 @@ public class Network {
 
     public int solution(int n, int[][] computers) {
       int answer = 0;
-      boolean[] check = new boolean[n];
-
-      for(int i=0;i<n;i++){
-        if(!check[i]){
-          dfs(computers, i, check);
+      boolean[] booleans = new boolean[n];
+      for (int i = 0; i < n; i++) {
+        if (!booleans[i]) {
+          dfs(i, computers, booleans);
           answer++;
         }
       }
@@ -16,14 +15,14 @@ public class Network {
       return answer;
     }
 
-    public void dfs(int[][] computers, int i, boolean[] check) {
-      check[i] = true;
-
-      for (int j = 0; j < computers.length; j++) {
-        if (i != j && computers[i][j] == 1 && !check[j]) {
-          dfs(computers, j, check);
+    public void dfs(int i, int[][] computers, boolean[] booleans) {
+      booleans[i] = true;
+      for (int j = 0; j < computers[i].length; j++) {
+        if(i != j && computers[i][j] == 1 && !booleans[j]) {
+          dfs(j, computers, booleans);
         }
       }
     }
+
 
 }
