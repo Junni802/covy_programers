@@ -3,27 +3,26 @@ package covy.programers.search;
 public class MinRectangle {
 
   public int solution(int[][] sizes) {
-    for (int i = 0; i < sizes.length; i++) {
+    for (int i=0; i<sizes.length; i++) {
       if (sizes[i][0] < sizes[i][1]) {
-        int number = sizes[i][0];
+        int tmp = sizes[i][0];
         sizes[i][0] = sizes[i][1];
-        sizes[i][1] = number;
+        sizes[i][1] = tmp;
       }
     }
-    int firstMaxNum = 0;
-    int secondMaxNum = 0;
-    for (int i = 0; i < sizes.length; i++) {
 
-      if (sizes[i][0] > firstMaxNum) {
-        firstMaxNum = sizes[i][0];
-      }
-      if (sizes[i][1] > secondMaxNum) {
-        secondMaxNum = sizes[i][1];
-      }
+    int first = 0;
+    int second = 0;
 
+    for (int i=0; i<sizes.length; i++) {
+      if (sizes[i][0] > first) {
+        first = sizes[i][0];
+      }
+      if (sizes[i][1] > second) {
+        second = sizes[i][1];
+      }
     }
-
-    return firstMaxNum * secondMaxNum;
+    return first * second;
   }
 
 }
