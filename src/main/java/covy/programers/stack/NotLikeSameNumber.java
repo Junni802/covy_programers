@@ -1,28 +1,22 @@
 package covy.programers.stack;
 
-import java.util.Stack;
+import java.util.ArrayList;
+import java.util.List;
 
 public class NotLikeSameNumber {
 
   public int[] solution(int []arr) {
-    Stack<Integer> stack = new Stack<>();
-
+    List<Integer> list = new ArrayList<>();
 
     int beforeNum = -1;
     for(int i=0; i<arr.length; i++) {
       if (beforeNum != arr[i]) {
         beforeNum = arr[i];
-        stack.add(arr[i]);
+        list.add(arr[i]);
       }
     }
 
-    int[] answer = new int[stack.size()];
-
-    for (int j=0; j<stack.size(); j++) {
-      answer[j] = stack.get(j);
-    }
-
-    return answer;
+    return list.stream().mapToInt(Integer::valueOf).toArray();
   }
 
 }
