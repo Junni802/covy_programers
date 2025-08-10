@@ -1,5 +1,7 @@
 package covy.programers.dfs_bfs;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
 import org.junit.jupiter.api.Test;
 
 public class TossTest {
@@ -7,6 +9,7 @@ public class TossTest {
   @Test
   void test() {
     int soulution = solution("123");
+    Queue queue = new ArrayDeque<>();
     System.out.println(soulution);
   }
 
