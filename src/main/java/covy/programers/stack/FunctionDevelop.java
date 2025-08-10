@@ -27,5 +27,4 @@ public class FunctionDevelop {
 
     return result.stream().mapToInt(Integer::intValue).toArray();
   }
-
 }
