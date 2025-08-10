@@ -1,8 +1,17 @@
 package covy.programers.stack;
 
-import java.util.Stack;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class NotLikeSameNumber {
+import java.util.Stack;
+import org.junit.jupiter.api.Test;
+
+class NotLikeSameNumberTest {
+
+  @Test
+  void test() {
+    int[] testData = {1,1,3,3,0,1,1};
+    solution(testData);
+  }
 
   public int[] solution(int []arr) {
     Stack<Integer> stack = new Stack<>();
@@ -24,5 +33,4 @@ public class NotLikeSameNumber {
 
     return answer;
   }
-
 }
