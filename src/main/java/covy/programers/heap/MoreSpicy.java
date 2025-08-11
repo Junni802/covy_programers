@@ -1,30 +1,25 @@
 package covy.programers.heap;
 
 import java.util.PriorityQueue;
+import java.util.Arrays;
+import java.util.Queue;
 
 public class MoreSpicy {
 
   public int solution(int[] scoville, int K) {
     int answer = 0;
+    Queue<Integer> queue = new PriorityQueue<>();
+    Arrays.stream(scoville).forEach(queue::add);
 
-    PriorityQueue<Integer> minHeap = new PriorityQueue<>();
-    for (int is : scoville) {
-      minHeap.add(is);
-    }
-
-    boolean resultYn = true;
-    while (resultYn) {
+    while (queue.peek() < K) {
+      if (queue.size() < 2) {
+        return -1;
+      }
+      int first = queue.poll();
+      int second = queue.poll();
+      int value = first + (second * 2);
+      queue.add(value);
       answer++;
-      if (minHeap.size() < 2) {
-        resultYn = false;
-        answer = -1;
-        break;
-      }
-      int num = minHeap.poll() + (minHeap.poll() * 2);
-      if (num >= K) {
-        resultYn = false;
-      }
-      minHeap.add(num);
     }
 
     return answer;
