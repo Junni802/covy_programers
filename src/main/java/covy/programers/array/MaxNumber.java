@@ -9,14 +9,18 @@ public class MaxNumber {
     String answer = "";
     List<String> list = new ArrayList<>();
 
-    for(int i=0; i<numbers.length; i++) {
-      list.add(String.valueOf(numbers[i]));
+    for(int num : numbers) {
+      list.add(String.valueOf(num));
     }
 
-    list.sort(String::compareTo);
+    list.sort((a,b) -> (b + a).compareTo(a + b));
 
-    for (String s : list) {
-      System.out.println("rkqt -> " + s);
+    for(String li: list) {
+      answer+=li;
+    }
+
+    if (answer.charAt(0) == '0') {
+      return "0";
     }
 
     return answer;
