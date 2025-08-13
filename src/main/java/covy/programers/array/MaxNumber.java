@@ -6,19 +6,19 @@ import java.util.List;
 public class MaxNumber {
 
   public String solution(int[] numbers) {
-
+    String answer = "";
     List<String> list = new ArrayList<>();
-    for (int number : numbers) {
-      list.add(number + "");
+
+    for(int i=0; i<numbers.length; i++) {
+      list.add(String.valueOf(numbers[i]));
     }
 
     list.sort(String::compareTo);
 
     for (String s : list) {
-      System.out.println(s);
+      System.out.println("rkqt -> " + s);
     }
 
-    String answer = "";
     return answer;
   }
 
